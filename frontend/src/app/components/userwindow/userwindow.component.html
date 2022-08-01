@@ -1,0 +1,9 @@
+<h4>My account</h4>
+ID: {{token.sub}} - {{token.family_name}}
+<br>
+<br>
+{{token.website}}
+<br>
+<button id="logout-button" [routerLink]="['/main']" (click)="logout()">Logout</button>
+
+

@@ -1,0 +1,10 @@
+<div class="login">
+
+  <form class="login-form" #loginForm="ngForm">
+    <div class="logInfo">{{this.logInfo}}</div>
+    <button id="loginButton" *ngIf="!token" type="submit" (click)="login()">Login</button>
+    <button id="startDemo" *ngIf="token" type="submit" (click)="startDemo()">START DEMO</button>
+    <br>
+  </form>
+
+</div>

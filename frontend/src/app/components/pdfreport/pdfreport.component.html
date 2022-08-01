@@ -1,0 +1,30 @@
+
+  <h2>SEAT NUMBER: {{data._movement.seatNumber}}</h2>
+  <table class="signature-table" id="reportData">
+    <tr>
+      <th>Armory Signature:</th>
+      <th>FID Signature:</th>
+    </tr>
+    <tr>
+      <td></td>
+      <td></td>
+    </tr>
+    <tr>
+      <td>Ammo Type: {{data._movement.product}}</td>
+      <td>Amount:  {{data._movement.stock}} </td>
+    </tr>
+    <tr>
+      <td id="description" colspan="2">
+        <br>
+        <h3>FIREARMS INTERVENTION DEPARTMENT</h3>
+        <br><br>
+        <p>
+          On the {{myDate}}  with the name and ID: <br><br>{{data._movement.client}} <br><br> bought
+          the above ammunition for the firearm with guide number: <br><br>{{data._movement.guide}} <br><br>in MadeUpArmory SL.
+        </p>
+      </td>
+    </tr>
+
+</table>
+<br><br><br>
+<button (click)="ExportToPDF()">Export PDF</button>

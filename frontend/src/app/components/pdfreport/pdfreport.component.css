@@ -1,0 +1,53 @@
+*{
+  font-family:  Helvetica,Arial, sans-serif;
+  font-size: 13px;
+}
+
+h2{
+  font-weight: bold;
+  margin-left: 30%;
+  font-size: 15px;
+  margin-right: auto;
+  margin-bottom: 10px;
+}
+
+h3{
+  font-weight: bold;
+  font-size: 15px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding-left: 10px;
+}
+
+.signature-table th{
+  border: solid 2px;
+}
+
+.signature-table td{
+  padding-left: 10%;
+  border: solid 1px;
+}
+
+#description{
+  border: none;
+}
+
+button{
+  font-size: 14px;
+  color: #d8d8d8;
+  float: right;
+  border-radius: 4px;
+  border: 0.5px solid;
+  background-color: #454545;
+  box-shadow: 0 2px 4px rgba(16, 16, 16, 0.5);
+  border-color: #302f2f;
+  margin-left: 6px;
+  padding: 4px 8px 4px 8px;
+  text-align: center;
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #adadad;
+  transition: all .4s;
+}

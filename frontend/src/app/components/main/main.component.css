@@ -1,0 +1,113 @@
+.box{
+  margin: auto;
+  padding-top: 20px;
+  width: 50%;
+  max-height: 50%;
+  height: 600px;
+  padding: 10px;
+}
+
+.banner{
+  background-image: url('../../../assets/img/bannerComputer.jpg');
+  background-size: 100%;
+  background-repeat: no-repeat;
+  font-size: 20px;
+}
+
+form .label{
+  font-family: Helvetica,Arial, sans-serif;
+  font-size: 12px;
+  color: #364959;
+}
+
+.title{
+  color: white;
+  display: inherit;
+  font-size: 3vw;
+  margin-top: 20px;
+  font-family: nunito-bold,Helvetica,Arial, sans-serif;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.slogan{
+  color: white;
+  display: inherit;
+  font-size: 1.5vw;
+  font-family: nunito-regular,Helvetica,Arial, sans-serif;
+  text-align: center;
+}
+
+input{
+  width: 100%;
+  height:30px;
+}
+
+button{
+  color: white;
+  font-family: nunito-bold,Helvetica,Arial, sans-serif;
+  font-size: 14px;
+  background: transparent;
+  display: block;
+  margin-top: 20px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 120px;
+  height: 40px;
+  border: 2px solid rgb(255, 255, 255);
+  padding: 10px 10px 10px 10px;
+  border-radius: 3px;
+  /* box-shadow: 1px 1px 1px rgb(192, 192, 192); */
+}
+
+button:hover{
+  background: rgb(255, 185, 79);
+  transition: 0.15s;
+}
+
+.login-input{
+  width: 200px;
+  margin-left: 35%;
+  margin-right: auto;
+}
+
+@media (max-width:800px){
+
+  .banner{
+    background-image: url('../../../assets/img/bannerComputer.jpg');
+    background-size: 200%;
+    background-repeat: no-repeat;
+    font-size: 20px;
+  }
+
+  .box{
+    width: 60%;
+    max-height: 100%;
+    height: 600px;
+    /* border: 1px solid rgb(82, 82, 82);
+    border-radius: 4px;
+    box-shadow: 1px 1px 1px rgb(192, 192, 192); */
+    padding: 10px;
+  }
+
+  .title{
+    color: white;
+    display: inherit;
+    font-size: 6.5vw;
+    margin-top: 15px;
+    font-family: nunito-bold,Helvetica,Arial, sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  .slogan{
+    color: white;
+    display: inherit;
+    font-size: 3.5vw;
+    font-family: nunito-regular,Helvetica,Arial, sans-serif;
+    text-align: center;
+  }
+
+}
+
+

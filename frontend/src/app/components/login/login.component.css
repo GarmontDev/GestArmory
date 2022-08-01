@@ -1,0 +1,71 @@
+.login-form {
+  min-width: 200px;
+  max-width: 400px;
+  padding: 10px 10px;
+  margin: auto;
+  border-radius: 4px;
+  /* background-color: white;
+  opacity:0.9; */
+  color: black;
+}
+
+.login-form input {
+  display: block;
+  font-size: 16px;
+  font-family: nunito-bold,Helvetica,Arial, sans-serif;
+  padding-left: 10px;
+  margin-top: 4px;
+  width: 100%;
+  border-radius: 2px;
+  height: 40px;
+  border: none;
+  box-shadow: inset -5px -5px 15px rgba(255, 255, 255, 0.8), inset 5px 5px 10px
+      rgba(0, 0, 0, 0.1);
+  border: 0 none;
+  background-color: #ffffff;
+}
+
+.login-form button{
+  color: white;
+  background-color: transparent;
+  font-family: nunito-bold,Helvetica,Arial, sans-serif;
+  font-size: 14px;
+  display: block;
+  margin-top: 10px;
+  margin-right: 50%;
+  margin-left: 35%;
+  width: 120px;
+  height: 40px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+
+.login-form button:hover{
+  background: rgb(255, 185, 79);
+  transition: 0.15s;
+  cursor: pointer;
+}
+
+.login-form button:disabled{
+    background: rgb(210, 210, 210);
+    cursor: not-allowed;
+}
+
+.logInfo{
+  color: white;
+  font-family: nunito-bold,Helvetica,Arial, sans-serif;
+  font-size: 14px;
+}
+
+#signup-link{
+  margin-top: 0px;
+  margin-left: 25%;
+  margin-right: auto;
+}
+
+#signup-link a{
+  color: white;
+  font-family: nunito-bold,Helvetica,Arial, sans-serif;
+  font-size: 14px;
+}

@@ -1,0 +1,64 @@
+<div class="add-movement-box">
+  <h2 *ngIf="editMode == false">New Movement</h2>
+  <h2 *ngIf="editMode == true">Edit Movement</h2>
+
+  <form #movementForm="ngForm">
+    <mat-grid-list cols="2" rowHeight="100px">
+      <mat-grid-tile class="smallfield">
+        <mat-form-field appearance="fill">
+        <mat-label for="seatNumber">Seat Number</mat-label>
+        <input id="seatnumber" matInput type="number" name="seatNumber" #seatNumber="ngModel" [(ngModel)]="movement.seatNumber" (ngModelChange)="CheckSeatNumber($event)" required>
+        <span>{{errorInfo}}</span>
+        <mat-error *ngIf="(seatNumber.value <= 0)">Menor o igual que 0 </mat-error>
+        <mat-error *ngIf="seatNumber.errors?.['required'] || seatNumber.value <= 0 || seatNumber.invalid || (seatNumber.dirty || seatNumber.touched)">Seat number not valid.</mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label>Date</mat-label>
+          <input matInput [matDatepicker]="picker" name="date" #date="ngModel" [(ngModel)]="movement.date" required>
+          <mat-hint>DD/MM/YYYY</mat-hint>
+          <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+          <mat-datepicker #picker></mat-datepicker>
+          <mat-error *ngIf="date.errors?.['required'] || date.invalid || (date.dirty || date.touched)">Date not valid.</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+    </mat-grid-list>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Products</mat-label>
+        <mat-select name="product" #product="ngModel" [(ngModel)]="movement.product" required>
+          <mat-option *ngFor="let product of products" [value]="product.name" >{{ product.name }}</mat-option>
+        </mat-select>
+        <mat-error *ngIf="product.errors?.['required'] || product.invalid || (product.dirty || product.touched)">Product not valid.</mat-error>
+      </mat-form-field>
+    </p>
+
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label for="client">Client </mat-label>
+        <input matInput type="text" name="client" #client="ngModel" [(ngModel)]="movement.client" disabled>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label for="guide">Guide</mat-label>
+        <span *ngIf="guide.touched && !guide.valid" >*</span>
+        <input matInput type="text" name="guide" #guide="ngModel" [(ngModel)]="movement.guide" disabled>
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label for="stock">Income/Outcome</mat-label>
+        <input matInput type="number" name="stock" #stock="ngModel" [(ngModel)]="movement.stock" required>
+        <mat-error *ngIf="stock.errors?.['required'] || stock.value <= 0 || stock.invalid || (stock.dirty || stock.touched)">Stock not valid.</mat-error>
+      </mat-form-field>
+    </p>
+
+    <button *ngIf="editMode == false" class="add-movement-input" (click)="CreateMovement()" [disabled]="!movementForm.form.valid || errorInfo != ''">Add new movement</button>
+    <button *ngIf="editMode == true" class="update-movement-input" (click)="UpdateMovement()" [disabled]="!movementForm.form.valid || errorInfo != ''">Save changes</button>
+    <br>
+  </form>
+</div>

@@ -1,0 +1,45 @@
+*{
+  font-family: Helvetica,Arial, sans-serif;
+}
+
+
+h2{
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 16px;
+
+  color: #364959;
+  margin-bottom: 10px;
+}
+
+button{
+  font-size: 12px;
+  color: #364959;
+  border-radius: 4px;
+  border: 0.5px solid;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(16, 16, 16, 0.5);
+  border-color: #302f2f;
+  padding: 10px 14px 10px 14px;
+  cursor: pointer;
+  margin-right: auto;
+  margin-left: 42%;
+}
+
+button:hover{
+  background-color: #e1eff1;
+}
+
+.mat-form-field{
+  width: 95%;
+  margin-bottom: 5px;
+}
+
+.mat-form-field-hint{
+  margin-bottom: 10px;
+}
+
+form button:disabled{
+  background: rgb(210, 210, 210);
+  cursor: not-allowed;
+}

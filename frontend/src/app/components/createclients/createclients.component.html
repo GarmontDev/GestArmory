@@ -1,0 +1,69 @@
+<div class="add-movement-box">
+  <h2 *ngIf="editMode == false">New Client</h2>
+  <h2 *ngIf="editMode == true">Edit Client</h2>
+
+  <form #clientForm="ngForm">
+    <mat-grid-list cols="2" rowHeight="100px">
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label for="dni">DNI</mat-label>
+          <span>{{errorInfo}}</span>
+          <input matInput type="text" name="dni" #dni="ngModel" [(ngModel)]="client.dni" (ngModelChange)="CheckDNI($event)" required>
+          <mat-error *ngIf="dni.errors?.['required'] || dni.invalid || (dni.dirty || dni.touched)">DNI not valid.</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label for="name">Name and surname</mat-label>
+          <input matInput type="text" name="name" #name="ngModel" [(ngModel)]="client.name" required>
+          <mat-error *ngIf="name.errors?.['required'] || name.invalid || (name.dirty || name.touched)">Name not valid.</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label for="address">Address</mat-label>
+          <input matInput type="text" name="address" #address="ngModel" [(ngModel)]="client.address" required>
+          <mat-error *ngIf="address.errors?.['required'] || address.invalid || (address.dirty || address.touched)">Address not valid.</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <mat-form-field appearance="fill">
+          <mat-label for="city">City</mat-label>
+          <input matInput type="text" name="city" #city="ngModel" [(ngModel)]="client.city" required>
+          <mat-error *ngIf="city.errors?.['required'] || city.invalid || (city.dirty || city.touched)">City not valid.</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label for="province">Province</mat-label>
+          <input matInput type="text" name="province" #province="ngModel" [(ngModel)]="client.province" required>
+          <mat-error *ngIf="province.errors?.['required'] || province.invalid || (province.dirty || province.touched)">Province not valid.</mat-error>
+        </mat-form-field>
+      </mat-grid-tile>
+      <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label for="guide">Guide</mat-label>
+        <input matInput type="text" name="guide" #guide="ngModel" [(ngModel)]="client.guide" required>
+        <mat-error *ngIf="guide.errors?.['required'] || guide.invalid || (guide.dirty || guide.touched)">Gudie not valid.</mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+    <mat-grid-tile>
+      <mat-form-field appearance="fill">
+        <mat-label>Guide Expedition Date</mat-label>
+        <input matInput [matDatepicker]="picker" id="guideexpeditiondate" name="guideexpeditiondate" #guideexpeditiondate="ngModel" [(ngModel)]="client.guideexpeditiondate" required>
+        <mat-hint>DD/MM/YYYY</mat-hint>
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+        <mat-error *ngIf="guideexpeditiondate.errors?.['required'] || guideexpeditiondate.invalid || (guideexpeditiondate.dirty || guideexpeditiondate.touched)">Expedition date not valid.</mat-error>
+      </mat-form-field>
+    </mat-grid-tile>
+  </mat-grid-list>
+
+
+    <button *ngIf="editMode == false" class="add-movement-input" (click)="NewClient()" [disabled]="!clientForm.form.valid || errorInfo != ''">Add new client</button>
+    <button *ngIf="editMode == true" class="update-movement-input" (click)="UpdateClient()" [disabled]="!clientForm.form.valid || errorInfo != ''">Save changes</button>
+    <br>
+
+  </form>
+</div>

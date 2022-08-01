@@ -1,0 +1,143 @@
+#header-wrapper{
+  background-color: white;
+}
+
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+.user-expansion-panel{
+  position: absolute;
+}
+
+#user-name{
+  font-size: 14px;
+  font-family:  Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  padding-right: 20px;
+  text-decoration: none;
+}
+
+#user-name li:hover{
+  text-decoration: none;
+}
+
+#user-role{
+  font-size: 11px;
+  font-family:  Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.navbar-a{
+  color: #364959;
+  background-color: transparent;
+  float: right;
+  margin-right: 60px;
+  margin-top: 20px;
+}
+
+.navbar-a ul {
+  position: relative;
+  float: right;
+  list-style: none;
+  line-height: 20px;
+  margin: 0 40px 2px 0;
+}
+
+.navbar-a ul a {
+  display:block;
+  color: #364959;
+  font-family: nunito-bold, Helvetica, Arial, sans-serif;
+  text-transform:uppercase;
+  letter-spacing:1px;
+  text-decoration:none;
+  font-weight:400;
+  font-size:15px;
+  padding:10px;
+}
+
+.navbar-a ul li {
+  position:relative;
+  float:left;
+  margin:0;
+  padding:0;
+  list-style-type: none;
+  text-decoration: none;
+  display: block;
+  font-size: 17px;
+}
+
+#header-wrapper ul li:hover {
+  /* background:#5b78a7; */
+  text-decoration: underline;
+  text-decoration-color: #56BFA1;
+  text-decoration-thickness: 4px;
+  text-underline-offset: 5px;
+}
+
+.navbar-a {
+  display: block;
+  margin-right: 250px;
+}
+
+.navbar-b {
+  display: none;
+}
+.open-navbar-b {
+  display: none;
+}
+
+@media (max-width:800px){
+  .navbar-a {
+    display: none;
+  }
+  .navbar-b {
+    display: block;
+  }
+  .open-navbar-b {
+    display: block;
+  }
+
+  .navbar-b {
+    color: #364959;
+    background-color: #ffffff;
+    position: absolute;
+    float: right;
+    margin-left: 70%;
+    /* margin-top: 20px;
+    margin-right: 20px; */
+  }
+
+  .navbar-b ul{
+    text-align: right;
+  }
+
+  .navbar-b ul li{
+    position:relative;
+    text-align: center;
+    list-style-type: none;
+  }
+
+  .navbar-b ul a{
+    display:block;
+    color: #364959;
+    font-family: nunito-bold, Helvetica, Arial, sans-serif;
+    text-transform:uppercase;
+    letter-spacing:1px;
+    text-decoration:none;
+    font-weight:400;
+    font-size:15px;
+    padding:10px;
+  }
+
+  .open-navbar-b{
+    background: white;
+    font-size: 22px;
+    float: right;
+    border: none;
+    margin-top: 20px;
+    margin-right: 30px;
+    margin-bottom: 10px;
+  }
+}

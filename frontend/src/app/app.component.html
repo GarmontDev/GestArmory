@@ -1,0 +1,54 @@
+<div id="header-wrapper">
+  <img class="logo" src="assets/img/logo.png">
+  <nav class="navbar-a" *ngIf="token">
+    <ul>
+        <mat-expansion-panel class="user-expansion-panel"
+          (opened)="panelOpenState = true"
+          (closed)="panelOpenState = false">
+          <mat-expansion-panel-header>
+            <mat-panel-title>
+              <div id="user-name">
+                {{token.name}}
+                <div id="user-role">
+                  {{token.email}}
+                </div>
+              </div>
+              <!-- <img src="../../assets/img/avatarsquared.png" alt="" class="rounded-circle" width="42"> -->
+            </mat-panel-title>
+          </mat-expansion-panel-header>
+          <app-userwindow></app-userwindow>
+        </mat-expansion-panel>
+    </ul>
+
+    <ul>
+      <li><a [routerLink]="['/clients']">Clients</a></li>
+      <li><a [routerLink]="['/movements']">Movements</a></li>
+      <li><a [routerLink]="['/products']">Products</a></li>
+    </ul>
+  </nav>
+
+  <button class="open-navbar-b" *ngIf="!phoneMenuIsOpen && token" (click)="toggleMenu()">☰</button>
+  <button class="open-navbar-b" *ngIf="phoneMenuIsOpen && token" (click)="toggleMenu()">x</button>
+  <nav class="navbar-b" *ngIf="phoneMenuIsOpen && token">
+      <ul class="menu-open" >
+        <li style="text-decoration: none;">
+        </li>
+        <li id="user-name" style="text-decoration: none;">
+          {{token.name}}
+          <div id="user-role">
+            {{token.email}}
+          </div>
+        </li>
+      </ul>
+      <ul>
+        <li><a [routerLink]="['/main']">Main</a></li>
+        <li><a [routerLink]="['/clients']">Clients</a></li>
+        <li><a [routerLink]="['/movements']">Movements</a></li>
+      </ul>
+  </nav>
+  <div id="line"></div>
+</div>
+
+<router-outlet></router-outlet>
+
+

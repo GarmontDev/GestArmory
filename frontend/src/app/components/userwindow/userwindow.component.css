@@ -1,0 +1,44 @@
+.rounded-circle {
+  border-radius: 50% !important;
+}
+
+#user-display-block{
+  float:left;
+}
+
+#user-name{
+  font-size: 14px;
+  font-family:  Helvetica, Arial, sans-serif;
+  font-weight: 600;
+  margin-left: 10px;
+  padding-right: 20px;
+  margin-top: 10px;
+  text-decoration: none;
+}
+
+#user-name li:hover{
+  text-decoration: none;
+}
+
+#logout-button{
+  color: red;
+  background-color: transparent;
+  font-family: nunito-bold,Helvetica,Arial, sans-serif;
+  font-size: 14px;
+  display: block;
+  float: right;
+  /* margin-top: 10px;
+  margin-right: 50%;
+  margin-left: 35%; */
+  width: 120px;
+  height: 40px;
+  border: 2px solid rgb(255, 255, 255);
+  border-radius: 3px;
+}
+
+#logout-button:hover{
+  color: white;
+  background: red;
+  transition: 0.15s;
+  cursor: pointer;
+}

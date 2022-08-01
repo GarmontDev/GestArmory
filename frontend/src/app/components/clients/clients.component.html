@@ -1,0 +1,99 @@
+<div id="loginMessage" *ngIf="!token">
+  You need to log-in to use the app.
+  <a [routerLink]="['/main']">Return to Main page</a>
+</div>
+
+<div class="body-background" *ngIf="token">
+    <div class="clients-container">
+      <div id="title">
+        <img id="clients-icon" src="../../../assets/img/clients-icon.png" height="30px" width="30px"><h2>Clients</h2>
+      </div>
+
+      <div class="action-buttons-container">
+        <button class="action-buttons" (click)="DeleteALLClients()">Delete ALL Clients</button>
+        <button class="action-buttons" (click)="LoadClientsFromFakeAPI()">Load Demo</button>
+        <button class="action-buttons" (click)="ExportToPDF()">Export to PDF</button>
+        <button class="action-buttons" mat-raised-button (click)="NewClient()">New Client</button>
+      </div>
+
+      <input matInput (keyup)="ApplyFilter($event)" placeholder="Search -> Ex: Name or Guide number" #input class="filterbar">
+
+      <div class="mat-elevation-z4">
+          <table mat-table [dataSource]="dataSource" id="htmlData" matSort>
+
+            <!-- Position Column -->
+            <ng-container matColumnDef="dni">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> DNI </th>
+              <td mat-cell *matCellDef="let client"> {{client.dni}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="name">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Name </th>
+              <td mat-cell *matCellDef="let client"> {{client.name}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="address">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Address </th>
+              <td mat-cell *matCellDef="let client"> {{client.address}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="city">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> City </th>
+              <td mat-cell *matCellDef="let client"> {{client.city}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="province">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Province </th>
+              <td mat-cell *matCellDef="let client"> {{client.province}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="guide">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Guide </th>
+              <td mat-cell *matCellDef="let client"> {{client.guide}} </td>
+            </ng-container>
+
+            <ng-container matColumnDef="guideexpeditiondate">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Guide Expedition Date </th>
+              <td mat-cell *matCellDef="let client"> {{client.guideexpeditiondate | date: 'dd/MM/yyyy'}} </td>
+            </ng-container>
+
+            <!-- Edit Column -->
+            <ng-container matColumnDef="edit">
+              <th mat-header-cell *matHeaderCellDef> Edit </th>
+              <td mat-cell *matCellDef="let client">
+                <button class="edit-client-button" type="button" (click)="EditClientRow(client)">
+                  <img src="../../../assets/img/edit-icon.png" height="20px" width="20px">
+                </button>
+              </td>
+            </ng-container>
+
+            <!-- Delete Column -->
+            <ng-container matColumnDef="remove">
+              <th mat-header-cell *matHeaderCellDef> Remove </th>
+              <td mat-cell *matCellDef="let client">
+                <button class="remove-client-button" type="button" (click)="DeleteClient(client._id)">
+                  <img src="../../../assets/img/remove-icon.png" height="20px" width="20px">
+                </button>
+              </td>
+            </ng-container>
+
+            <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+            <tr mat-row *matRowDef="let row; columns: displayedColumns;" (dblclick)="NewMovement(row)"
+              matTooltip="Double click to create a new movement."
+              [matTooltipDisabled]="!tooltip.value"></tr>
+
+            <!-- Row shown when there is no matching data. -->
+            <tr class="mat-row" *matNoDataRow>
+              <td class="mat-cell" colspan="4">No data matching the filter "{{input.value}}"</td>
+            </tr>
+
+          </table>
+          <mat-checkbox [formControl]="tooltip" (click)="tooltipClicked()" class="disabled-checkbox">Tooltip</mat-checkbox>
+
+          <mat-paginator [pageSizeOptions]="[5, 10, 20, 50, 100]"
+              showFirstLastButtons
+              aria-label="Select page of clients">
+          </mat-paginator>
+        </div>
+      </div>
+    </div>
