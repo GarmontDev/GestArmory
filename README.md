@@ -1,6 +1,6 @@
 # 🔫 GestArmory
 
-**GestArmory** is a web application designed for an armory store to manage ammunition sells. With features to generate reports, and maintain a secure database. Built with **Angular** for the front-end, **Express.js** for the back-end, and **MongoDB** for the database, this app ensures reliability, scalability, and performance.
+**GestArmory** is a web application designed for an armory store to manage ammunition sales. With features to generate automated reports, and maintain a secure database. Built with **Angular** for the front-end, **Express.js** for the back-end, and **MongoDB** for the database, this app ensures reliability, scalability, and performance.
 
 ---
 
